@@ -5,13 +5,19 @@ const db = require('./config/mongoose');
 const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'doc.html'));
+});
+
 app.use(router);
+
 db.connectToDatabase().then(function () {
     console.log('DB connect successfully!');
     app.listen(PORT, () => {

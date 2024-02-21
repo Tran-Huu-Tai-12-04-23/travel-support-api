@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User API Documentation</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 20px auto;
+            }
+            h1,
+            h2,
+            h3 {
+                color: #333;
+            }
+            pre {
+                background-color: #f4f4f4;
+                padding: 10px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>User API Documentation</h1>
+
+        <!-- Register -->
+        <h2>1. Register</h2>
+        <p><strong>Endpoint:</strong> POST /auth/register</p>
+        <p><strong>Input:</strong></p>
+        <pre>
+{
+    "username": "exampleUsername",
+    "password": "examplePassword",
+}
+</pre
+        >
+        <p><strong>Output:</strong></p>
+        <pre>
+{"username":"huutai2",
+"password":"$2b$10$0qgqMZlpzQE2J23jtHJvjeeacdy2XzG02qQ47n4VR6mNMyWUWwJkG",
+"_id":"65d5f732703766711f3446f1",
+"createdAt":"2024-02-21T13:14:26.086Z",
+"updatedAt":"2024-02-21T13:14:26.086Z",
+"__v":0}
+</pre
+        >
+        <!-- Login -->
+        <h2>1. login</h2>
+        <p><strong>Endpoint:</strong> POST /auth/login</p>
+        <p><strong>Input:</strong></p>
+        <pre>
+{
+    "username": "exampleUsername",
+    "password": "examplePassword",
+}
+</pre
+        >
+        <p><strong>Output:</strong></p>
+        <pre>
+{
+    "user": {
+        "_id": "65d5f732703766711f3446f1",
+        "username": "huutai2",
+        "password": "$2b$10$0qgqMZlpzQE2J23jtHJvjeeacdy2XzG02qQ47n4VR6mNMyWUWwJkG",
+        "createdAt": "2024-02-21T13:14:26.086Z",
+        "updatedAt": "2024-02-21T13:14:26.086Z",
+        "__v": 0
+    }
+}
+</pre
+        >
+
+        <!-- ---- create user  -->
+        <h2>3. Create User</h2>
+        <p><strong>Endpoint:</strong> POST /api/users</p>
+        <p><strong>Input:</strong></p>
+        <pre>
+{
+    "username": "exampleUsername",
+    "password": "examplePassword",
+    "userDetail": {
+        "name": "John Doe",
+        "fullName": "John A. Doe",
+        "address": "123 Main St",
+        "email": "john@example.com",
+        "phoneNumber": "123-456-7890"
+    }
+}
+</pre
+        >
+        <p><strong>Output:</strong></p>
+        <pre>
+{
+    "_id": "generatedUserId",
+    "username": "exampleUsername",
+    "login_history": "timestamp",
+    "userDetail": {
+        "name": "John Doe",
+        "fullName": "John A. Doe",
+        "address": "123 Main St",
+        "email": "john@example.com",
+        "phoneNumber": "123-456-7890"
+    },
+    "createdAt": "timestamp",
+    "updatedAt": "timestamp"
+}
+</pre
+        >
+
+        <!-- Repeat the above structure for other endpoints -->
+
+        <h2>2. Get All Users</h2>
+        <p><strong>Endpoint:</strong> GET /api/users</p>
+        <p><strong>Output:</strong></p>
+        <pre>
+[
+    {
+        "_id": "userId1",
+        "username": "exampleUsername1",
+        "login_history": "timestamp",
+        "userDetail": {
+            "name": "John Doe",
+            "fullName": "John A. Doe",
+            "address": "123 Main St",
+            "email": "john@example.com",
+            "phoneNumber": "123-456-7890"
+        },
+        "createdAt": "timestamp",
+        "updatedAt": "timestamp"
+    },
+    {
+        "_id": "userId2",
+        "username": "exampleUsername2",
+        "login_history": "timestamp",
+        "userDetail": {
+            "name": "Jane Doe",
+            "fullName": "Jane B. Doe",
+            "address": "456 Oak St",
+            "email": "jane@example.com",
+            "phoneNumber": "987-654-3210"
+        },
+        "createdAt": "timestamp",
+        "updatedAt": "timestamp"
+    }
+    <!-- More user objects as needed -->
+]
+</pre>
+
+        <!-- Repeat the above structure for other endpoints -->
+    </body>
+</html>
