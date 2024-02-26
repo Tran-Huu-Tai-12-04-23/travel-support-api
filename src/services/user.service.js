@@ -2,7 +2,7 @@ const User = require('../models/user.model');
 
 async function createUser(user) {
     try {
-        const existingUser = await User.findOne({ name: user.name });
+        const existingUser = await User.findOne({ name: user.username });
         if (existingUser) {
             throw new Error('Username already exists');
         }
