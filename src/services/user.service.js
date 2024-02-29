@@ -21,6 +21,10 @@ async function getUserById(userId) {
     return await User.findById(userId);
 }
 
+async function getUserByUsername(username) {
+    return await User.findOne({ username: username });
+}
+
 async function updateUser(userId, updatedUser) {
     return await User.findByIdAndUpdate(userId, updatedUser, { new: true });
 }
@@ -53,4 +57,5 @@ module.exports = {
     updateUser,
     deleteUser,
     addOrUpdateUserDetail,
+    getUserByUsername,
 };

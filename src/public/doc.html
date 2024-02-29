@@ -27,7 +27,7 @@
 
         <!-- Register -->
         <h2>1. Register</h2>
-        <p><strong>Endpoint:</strong> POST /auth/register</p>
+        <p><strong>Endpoint:</strong> POST /api/auth/register</p>
         <p><strong>Input:</strong></p>
         <pre>
 {
@@ -48,7 +48,7 @@
         >
         <!-- Login -->
         <h2>1. login</h2>
-        <p><strong>Endpoint:</strong> POST /auth/login</p>
+        <p><strong>Endpoint:</strong> POST /api/auth/login</p>
         <p><strong>Input:</strong></p>
         <pre>
 {
@@ -71,6 +71,37 @@
 }
 </pre
         >
+
+        <!-- --------------- login with google -->
+</pre
+        >
+        <!-- Login with google -->
+        <h2>1. login with google</h2>
+        <p><strong>Endpoint:</strong> POST /api/auth/login/google</p>
+        <p><strong>Input:</strong></p>
+        <pre>
+{
+    "username": "exampleUsername",
+    "password": "examplePassword",
+}
+</pre
+        >
+        <p><strong>Output:</strong></p>
+        <pre>
+{
+    "user": {
+        "_id": "65d5f732703766711f3446f1",
+        "username": "huutai2",
+        "password": "$2b$10$0qgqMZlpzQE2J23jtHJvjeeacdy2XzG02qQ47n4VR6mNMyWUWwJkG",
+        "createdAt": "2024-02-21T13:14:26.086Z",
+        "updatedAt": "2024-02-21T13:14:26.086Z",
+        "__v": 0
+    }
+}
+</pre
+        >
+
+
 
         <!-- ---- create user  -->
         <h2>3. Create User</h2>

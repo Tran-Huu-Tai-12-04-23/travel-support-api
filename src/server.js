@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const { swaggerSpec } = require('./config/swaggerConf');
+var passport = require('passport');
+require('./passport');
 
 const PORT = process.env.PORT || 3000;
 
@@ -20,7 +22,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'doc.html'));
 });
 
-app.use(router);
+app.use('/api', router);
 
 db.connectToDatabase().then(function () {
     console.log('DB connect successfully!');

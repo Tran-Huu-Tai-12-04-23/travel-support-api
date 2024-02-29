@@ -11,6 +11,22 @@ async function login(req, res) {
         res.status(401).json({ error: error.message });
     }
 }
+async function loginWithGoogle(req, res) {
+    try {
+        const { username, password } = req.body;
+        const userExist = await userService.getUserByUsername(username);
+        if (!userExist) {
+            const newUser = await userService.createUser(req.body);
+            res.status(201).json({ user: newUser });
+        } else {
+            const { user } = await authService.authenticateUser(username, password);
+            res.json({ user });
+        }
+    } catch (error) {
+        res.status(401).json({ error: error.message });
+    }
+}
+
 async function register(req, res) {
     try {
         const newUser = await userService.createUser(req.body);
@@ -23,4 +39,5 @@ async function register(req, res) {
 module.exports = {
     login,
     register,
+    loginWithGoogle,
 };
